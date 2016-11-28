@@ -2,7 +2,9 @@ var debug = true;
 var timer;
 var currentScreen = "";
 var idClass = "";
- 
+var ip = "192.168.1.105"; 
+var idAluno = "3";
+
 var multioption = {
     status: false,
     id: "Q1-hard",
@@ -40,9 +42,9 @@ function overflowTimer(){
         console.log("Tela Atual: "+currentScreen);*/
     }
 
-    $.post("http://192.168.0.103:5000/storage/1",
+    $.post("http://"+ ip +":5000/storage/1",
         {
-            idUser: "2",
+            idUser: idAluno,
             timeStamp: timestamp,
             tipo: null,
             tela: currentScreen,
@@ -151,9 +153,9 @@ function listenClick(e){
         console.log("DataCollector timestamp: "+timestamp); 
     }*/
 
-    $.post("http://192.168.0.103:5000/storage/1",
+    $.post("http://"+ ip +":5000/storage/1",
     {
-      idUser: "2",
+      idUser: idAluno,
       timeStamp: timestamp,
       tipo: e.type,
       tela: currentScreen,
